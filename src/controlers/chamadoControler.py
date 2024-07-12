@@ -77,8 +77,8 @@ class ChamadoControler:
             ''')
             rows = cursor.fetchall()
             if rows == '' or rows is None or len(rows)==0:
-              sg.PopupTimed('Não há dados para esse filtro.')
-            
+                sg.PopupTimed('Não há dados para esse filtro.')
+                
             return(rows)
 
         except Error as e:
@@ -88,7 +88,7 @@ class ChamadoControler:
  
     #pesquisando os dados por Id
     @staticmethod
-    def search_in_chamados_id(database_name: str,filter: int) -> list:
+    def search_in_chamados_id(database_name: str, field_name:str,  filter: str) -> list:
         """
         Faz uma pesquisa na tabela de chamados de acordo o id único do chamado
         retornando todos os chamados referentes ao id informado.
@@ -97,18 +97,53 @@ class ChamadoControler:
         :filter: string
         :return rows: list
         """
-        try:
-            conn = DatabaseControler.conect_database(database_name)
-            cursor = conn.cursor()
-            cursor.execute('''
-            SELECT * FROM Chamados WHERE Id = ?;
-            ''',(filter,))
-            rows = cursor.fetchall()
-            if rows == '' or rows is None or len(rows)==0:
-                sg.PopupTimed(f'Não há dados para ID: {filter}')
-                
-            return(rows)
+        if field_name=="Todos":
+            rows = ChamadoControler.search_in_chamados_all(database_name)
+            return rows
+            
+        else:
+            try:
+                conn = DatabaseControler.conect_database(database_name)
+                cursor = conn.cursor()
+                cursor.execute(f'''
+                SELECT * FROM Chamados WHERE {field_name} = ?;
+                ''',(filter,))
+                rows = cursor.fetchall()
+                if rows == '' or rows is None or len(rows)==0:
+                    sg.PopupTimed(f'Não há dados para o(a): {field_name.upper()} informado (a)')
+                return(rows)
 
-        except Error as e:
-            print(e)
-        conn.close()
+            except Error as e:
+                print(e)
+            conn.close()
+        
+    @staticmethod
+    def show_results(rows: list) -> None:
+        """
+        Recebe os dados já do banco de dados para serem exibidos em tela.
+        Renderiza uma tela que faz a exibição de todos os itens que foram fornecidos
+        dentro do vetor dado como parâmetro
+
+        :param dados: list
+        :return void
+        """
+        
+        number = str(len(rows))
+        if number == None:
+            number = '0'
+        headings=[' Id ', 'Setor','Data', 'Item','Status','Descrição']
+        col_widths = list(map(lambda x:len(x)+4, headings))
+        layout = [
+            [sg.Text('Chamados', pad=(5, 10))],
+            [sg.Table(values=rows,headings=headings,col_widths=col_widths, row_height=35, auto_size_columns=True, justification='left')],
+            [sg.Text('Total: '),sg.Text(number)],
+            [sg.Button('Atualizar', key='Atualizar'), sg.Button('Deletar', key='delete')]
+        ]
+        window = sg.Window('Chamados', layout,modal=True)
+        event, values = window.read()
+        while True:
+            event, values = window.read()
+            if event == "Exit" or event == sg.WIN_CLOSED:
+                break
+
+        window.close()

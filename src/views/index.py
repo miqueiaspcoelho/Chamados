@@ -7,6 +7,7 @@ parent, root = file.parent, file.parents[1]
 sys.path.append(str(root))
 
 from views.addSetor import AddSetor
+from views.pesquisa import Pesquisa
 
 from controlers.chamadoControler import ChamadoControler
 from controlers.databaseControler import DatabaseControler
@@ -23,7 +24,7 @@ from models.widget5 import Widget5
 from models.layout import Layout
 
 
-import addSetor
+
 '''
 #verificando a junção                
 data = str(input('Digite a data: '))
@@ -91,4 +92,8 @@ while True:
         AddSetor.add_setor(database.name)
         option = SetorControler.update_setor_list(database.name)
         window['setor'].update(option)
+    
+    if event == 'Pesquisar':
+        Pesquisa.open_window_pesquisa(database.name, 'Pesquisar')
+        
 window.close()

@@ -82,3 +82,4 @@ class SetorControler:
             aux = str(x[0])+ '  -  ' + x[1]
             options.append(aux)
         return options
+        
