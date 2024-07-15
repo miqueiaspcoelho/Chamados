@@ -6,6 +6,7 @@ sys.path.append(str(root))
 
 from models.chamado import Chamado
 from controlers.databaseControler import DatabaseControler
+from views.update import Update
 
 from typing import List
 import PySimpleGUI as sg
@@ -160,5 +161,8 @@ class ChamadoControler:
             event, values = window.read()
             if event == "Exit" or event == sg.WIN_CLOSED:
                 break
+                
+            if event == "Atualizar":
+                Update.open_window_update(['Resolvido','Pendente','Manutenção', 'Troca', 'RealJet Aberto','RealJet Resolvido'], 'status', 'filter', 'confirmar', 'update')
 
         window.close()

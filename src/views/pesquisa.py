@@ -9,12 +9,12 @@ import PySimpleGUI as sg #aqui nesse ambiente não aceita algo instalado no venv
 from controlers.setorControler import SetorControler
 from controlers.chamadoControler import ChamadoControler
 from models.setor import Setor
-
+from models.widget6 import Widget6
 
 class Pesquisa:
 
     @staticmethod
-    def open_window_pesquisa(database_name: str, title: str):
+    def open_window_pesquisa(database_name: str, title: str,values: list[str], values_key:str, input_key:str, button_name:str, button_name_key:str):
         """
         Renderiza uma janela que dá a opção de pesquisa ao usuário.
         A pesquisa ocorre por meio da seleção de um filtro e em seguida a correta escrita
@@ -24,14 +24,9 @@ class Pesquisa:
         :param None
         :return void
         """
+        widget6 = Widget6.show(values, values_key, input_key, button_name,button_name_key)
 
-        layout = [
-            [sg.Text('Filtro: ', pad=(10,10)),sg.OptionMenu(values=['Id','Setor','Data','Item','Status','Descricao','Todos'], key='field_name')],
-            [sg.Text('Digite:', pad=(10,10)),sg.Input(tooltip='Digite corretamente de acordo com o filtro marcado',key='filter')],
-            [sg.Button('Buscar',key='buscar')],
-        ]
-
-        window = sg.Window(f'{title}', layout, modal=True,element_justification='left')
+        window = sg.Window(f'{title}', widget6, modal=True,element_justification='left')
         option=''
         filter=''
         rows=''
@@ -47,3 +42,5 @@ class Pesquisa:
                 
 
         window.close()
+    
+    

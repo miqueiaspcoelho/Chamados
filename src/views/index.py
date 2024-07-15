@@ -94,6 +94,6 @@ while True:
         window['setor'].update(option)
     
     if event == 'Pesquisar':
-        Pesquisa.open_window_pesquisa(database.name, 'Pesquisar')
+        Pesquisa.open_window_pesquisa(database.name, 'Pesquisar', ['Id','Setor','Data','Item','Status','Descricao','Todos'], 'field_name', 'filter', 'Buscar', 'buscar')
         
 window.close()
