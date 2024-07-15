@@ -26,7 +26,7 @@ class Pesquisa:
         """
 
         layout = [
-            [sg.Text('Filtro: ', pad=(10,10)),sg.OptionMenu(values=['Id','Setor','Data','Item','Status','Todos'], key='field_name')],
+            [sg.Text('Filtro: ', pad=(10,10)),sg.OptionMenu(values=['Id','Setor','Data','Item','Status','Descricao','Todos'], key='field_name')],
             [sg.Text('Digite:', pad=(10,10)),sg.Input(tooltip='Digite corretamente de acordo com o filtro marcado',key='filter')],
             [sg.Button('Buscar',key='buscar')],
         ]
@@ -42,7 +42,7 @@ class Pesquisa:
             if event == 'buscar':
                 field_name = values['field_name']
                 filter = values['filter']
-                rows = ChamadoControler.search_in_chamados_id(database_name, field_name, filter)
+                rows = ChamadoControler.search_in_chamados(database_name, field_name, filter)
                 ChamadoControler.show_results(rows)
                 
 

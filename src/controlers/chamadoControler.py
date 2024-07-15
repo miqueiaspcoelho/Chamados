@@ -86,9 +86,10 @@ class ChamadoControler:
             sg.PopupTimed('Erro na operação')
         conn.close()
  
+    
     #pesquisando os dados por Id
     @staticmethod
-    def search_in_chamados_id(database_name: str, field_name:str,  filter: str) -> list:
+    def search_in_chamados(database_name: str, field_name:str,  filter: str) -> list:
         """
         Faz uma pesquisa na tabela de chamados de acordo o id único do chamado
         retornando todos os chamados referentes ao id informado.
@@ -100,9 +101,23 @@ class ChamadoControler:
         if field_name=="Todos":
             rows = ChamadoControler.search_in_chamados_all(database_name)
             return rows
-            
+        
         else:
             try:
+                if field_name=="Descricao":
+                    filter = '%'+filter+'%'
+                    conn = DatabaseControler.conect_database(database_name)
+                    cursor = conn.cursor()
+                    cursor.execute(f'''
+                    SELECT Id, Descricao, Data, Item, Status, Descricao FROM Chamados WHERE {field_name} LIKE ?;
+                    ''',(filter,))
+                    rows = cursor.fetchall()
+                    if rows == '' or rows is None or len(rows)==0:
+                        sg.PopupTimed(f'Não há dados para o(a): {field_name.upper()} informado (a)')
+                    return(rows)
+
+                    
+                    
                 conn = DatabaseControler.conect_database(database_name)
                 cursor = conn.cursor()
                 cursor.execute(f'''
