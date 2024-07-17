@@ -6,7 +6,7 @@ sys.path.append(str(root))
 
 from models.chamado import Chamado
 from controlers.databaseControler import DatabaseControler
-from views.update import Update
+
 
 from typing import List
 import PySimpleGUI as sg
@@ -132,6 +132,39 @@ class ChamadoControler:
             except Error as e:
                 print(e)
             conn.close()
+    
+    @staticmethod
+    def update_status_chamado (database_name: str, status:str, id: int) -> None:
+        """
+        Com base em id informado é feita a atualização do status
+        (Resolvido, Pendente, Manutenção,
+        RealJet Pendente, RealJet Resolvido).
+        Como retorno há um popup que informa o sucesso ou falha na operaçao
+
+        :param name_db: string
+        :status: string
+        :return void
+        """
+        id_list = DatabaseControler.select_all_id_from_chamados(database_name)
+        
+        try:
+            if id in id_list:
+                conn = DatabaseControler.conect_database(database_name)
+                cursor = conn.cursor()
+                cursor.execute('''
+                UPDATE Chamados SET Status = ? WHERE Id = ?;
+                ''',(status.lower(), id))
+                sg.PopupTimed(f'Chamado {id} atualizado status para {status}')
+                conn.commit()
+                conn.close()
+            else:
+                sg.PopupTimed(f'Não há chamados para o id {id}')
+
+        except Error as e:
+            print(e)
+            sg.PopupTimed('Erro na operação')
+            
+        
         
     @staticmethod
     def show_results(rows: list) -> None:

@@ -95,11 +95,11 @@ while True:
         window['setor'].update(option)
     
     if event == 'Pesquisar':
-        Pesquisa.open_window_pesquisa(database.name, 'Pesquisar', ['Id','Setor','Data','Item','Status','Descricao','Todos'], 'field_name', 'filter', 'Buscar', 'buscar')
+        Pesquisa.open_window_pesquisa('Pesquisar', database.name, ['Id','Setor','Data','Item','Status','Descricao','Todos'], 'field_name', 'filter', 'Buscar', 'buscar')
     
     
     if event == 'update':
-        Update.open_window_update(['Resolvido','Pendente','Manutenção', 'Troca', 'RealJet Aberto','RealJet Resolvido'], 'status', 'filter', 'confirmar', 'update')
+        Update.open_window_update('Atualizar Status',database.name,['Resolvido','Pendente','Manutenção', 'Troca', 'RealJet Aberto','RealJet Resolvido'], 'status', 'filter', 'confirmar', 'update')
         
         
 window.close()

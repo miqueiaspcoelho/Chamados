@@ -76,4 +76,20 @@ class DatabaseControler:
         except Error as e:
             print(e)
             print('Erro ao criar a tabela')
+    
+    @staticmethod
+    def select_all_id_from_chamados(database_name:str):
+        id_elements_list=[]
+        try:
+            conn = DatabaseControler.conect_database(database_name)
+            cursor = conn.cursor()
+            rows = cursor.execute('''SELECT Id FROM Chamados''')
+            if rows!= None or rows!='':
+                for element in rows:
+                    id_elements_list.append(element[0])
+                
+            return id_elements_list
+            
+        except Error as e:
+            print(e)
         
