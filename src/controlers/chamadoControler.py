@@ -153,7 +153,6 @@ class ChamadoControler:
             [sg.Text('Chamados', pad=(5, 10))],
             [sg.Table(values=rows,headings=headings,col_widths=col_widths, row_height=35, auto_size_columns=True, justification='left')],
             [sg.Text('Total: '),sg.Text(number)],
-            [sg.Button('Atualizar', key='Atualizar'), sg.Button('Deletar', key='delete')]
         ]
         window = sg.Window('Chamados', layout,modal=True)
         event, values = window.read()
@@ -161,8 +160,5 @@ class ChamadoControler:
             event, values = window.read()
             if event == "Exit" or event == sg.WIN_CLOSED:
                 break
-                
-            if event == "Atualizar":
-                Update.open_window_update(['Resolvido','Pendente','Manutenção', 'Troca', 'RealJet Aberto','RealJet Resolvido'], 'status', 'filter', 'confirmar', 'update')
 
         window.close()

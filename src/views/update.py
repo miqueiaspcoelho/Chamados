@@ -11,6 +11,7 @@ from models.setor import Setor
 from models.widget6 import Widget6
 
 
+
 class Update:
     
     @staticmethod
@@ -29,10 +30,12 @@ class Update:
         
         widget6 = Widget6.show(values, values_key, input_key, button_name,button_name_key)
         window = sg.Window('Atualizar Chamados', widget6, modal=True,element_justification='left')
+        id=''
+        status=''
+        rows=''
         while True:
             event, values = window.read()
             if event == "Exit" or event == sg.WIN_CLOSED:
                 break
-
         window.close()
         

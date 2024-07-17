@@ -8,6 +8,7 @@ sys.path.append(str(root))
 
 from views.addSetor import AddSetor
 from views.pesquisa import Pesquisa
+from views.update import Update
 
 from controlers.chamadoControler import ChamadoControler
 from controlers.databaseControler import DatabaseControler
@@ -95,5 +96,10 @@ while True:
     
     if event == 'Pesquisar':
         Pesquisa.open_window_pesquisa(database.name, 'Pesquisar', ['Id','Setor','Data','Item','Status','Descricao','Todos'], 'field_name', 'filter', 'Buscar', 'buscar')
+    
+    
+    if event == 'update':
+        Update.open_window_update(['Resolvido','Pendente','Manutenção', 'Troca', 'RealJet Aberto','RealJet Resolvido'], 'status', 'filter', 'confirmar', 'update')
+        
         
 window.close()

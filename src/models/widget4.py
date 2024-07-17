@@ -10,6 +10,7 @@ class Widget4:
         widget4 = [sg.Button('Ok',key='Ok'), 
             sg.Button('Cancel', key='Cancel'),
             sg.Button('Pesquisar',key='Pesquisar'), 
-            sg.Button('Adicionar Setor', key='add_setor')
+            sg.Button('Adicionar Setor', key='add_setor'),
+            sg.Button('Atualizar Status', key='update')
         ]
         return widget4
