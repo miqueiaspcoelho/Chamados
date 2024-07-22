@@ -7,6 +7,6 @@ class Widget6:
         widget6 = [
                     [sg.Text('Filtro: ', pad=(10,10)),sg.OptionMenu(values=values, key=values_key)],
                     [sg.Text('Digite:', pad=(10,10)),sg.Input(tooltip='Digite corretamente de acordo com o filtro marcado',key=input_key)],
-                    [sg.Button(button_name, key=button_name_key)],
+                    [sg.Button(button_name.capitalize(), key=button_name_key)],
                 ]
         return widget6

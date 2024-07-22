@@ -187,7 +187,7 @@ class ChamadoControler:
             [sg.Table(values=rows,headings=headings,col_widths=col_widths, row_height=35, auto_size_columns=True, justification='left')],
             [sg.Text('Total: '),sg.Text(number)],
         ]
-        window = sg.Window('Chamados', layout,modal=True)
+        window = sg.Window('Chamados', layout,modal=True,resizable = True)
         event, values = window.read()
         while True:
             event, values = window.read()
@@ -195,3 +195,28 @@ class ChamadoControler:
                 break
 
         window.close()
+        
+        
+    def delete_chamado(database_name: str, id: str) -> None:
+        """
+        Com base em id informado um chamado é deletado do banco de dados
+        Como retorno há um popup que informa o sucesso ou falha na operação.
+
+        :param name_db: string
+        :status: string
+        :return void
+        """
+        try:
+            conn = DatabaseControler.conect_database(database_name)
+            cursor = conn.cursor()
+            cursor.execute('''
+            DELETE FROM Chamados WHERE Id = ?;
+            ''',(id,))
+            sg.PopupTimed('Registro deletado com sucesso')
+            conn.commit()
+            
+
+        except Error as e:
+            print(e)
+            sg.PopupTimed('Erro na operação')
+        conn.close()

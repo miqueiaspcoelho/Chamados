@@ -9,6 +9,7 @@ sys.path.append(str(root))
 from views.addSetor import AddSetor
 from views.pesquisa import Pesquisa
 from views.update import Update
+from views.deleteChamado import Delete
 
 from controlers.chamadoControler import ChamadoControler
 from controlers.databaseControler import DatabaseControler
@@ -70,9 +71,10 @@ layout = Layout.show((Widget1.show(options)),
 window = sg.Window('Gerenciador de chamados', layout ,resizable = True)
 while True:
     event, values = window.read()
-    if event == sg.WIN_CLOSED or event == 'Cancel': # if user closes window or clicks cancel
+    if event == sg.WIN_CLOSED or event == 'exit': # if user closes window or clicks exit
         break
-    if event == 'Ok':
+        
+    if event == 'insert':
 
         #formatação das datas
         data_completa = values['day'] + '/' + values['month'] + '/' + values['year']
@@ -89,17 +91,22 @@ while True:
         
         chamado = Chamado(setor=setor, data=data_completa, item=item,status=status, descricao=descricao)
         ChamadoControler.insert_into_chamados(database.name, chamado)
+        
     if event == 'add_setor':
         AddSetor.add_setor(database.name)
         option = SetorControler.update_setor_list(database.name)
         window['setor'].update(option)
     
-    if event == 'Pesquisar':
+    if event == 'search':
         Pesquisa.open_window_pesquisa('Pesquisar', database.name, ['Id','Setor','Data','Item','Status','Descricao','Todos'], 'field_name', 'filter', 'Buscar', 'buscar')
     
     
-    if event == 'update':
+    if event == 'update_status':
         Update.open_window_update('Atualizar Status',database.name,['Resolvido','Pendente','Manutenção', 'Troca', 'RealJet Aberto','RealJet Resolvido'], 'status', 'filter', 'confirmar', 'update')
+    
+   
+    if event == 'delete':
+        Delete.open_window_delete('Excluir Chamado',database.name,'id', 'id', 'buscar', 'search','deletar','delete')
         
         
 window.close()
