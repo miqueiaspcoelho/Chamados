@@ -7,10 +7,12 @@ o botão de pesquisar abre uma nova janela para realizar uma busca'''
 
 class Widget4:
     def show():
-        widget4 = [sg.Button('Ok',key='Ok'), 
-            sg.Button('Cancel', key='Cancel'),
-            sg.Button('Pesquisar',key='Pesquisar'), 
+        widget4 = [
+            sg.Button('Cadastrar',key='Ok'), 
+            sg.Button('Pesquisar',key='Pesquisar'),
+            sg.Button('Excluir', key='delete'),
             sg.Button('Adicionar Setor', key='add_setor'),
-            sg.Button('Atualizar Status', key='update')
+            sg.Button('Atualizar Status', key='update'),
+            sg.Button('Fechar', button_color='#8B0000', key='Cancel')
         ]
         return widget4
