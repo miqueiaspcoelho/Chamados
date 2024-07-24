@@ -26,39 +26,12 @@ from models.widget5 import Widget5
 from models.layout import Layout
 
 
-
-'''
-#verificando a junção                
-data = str(input('Digite a data: '))
-tipo = str(input('Digite o tipo: '))
-status = str(input('Digite o status: '))
-descricao = str(input('Digite a descricao: '))
-setor = str(input('Digite o setor: '))
-
-c1 = Chamado(data=data, tipo=tipo, status=status, descricao=descricao, setor=setor)
-ChamadoControler.save_chamado(c1)
-for i in ChamadoControler.show_chamados():
-    print(i.data, i.descricao)
-'''
-#addSetor.add_setor() #tela setor
-database = Database('DATABASEFILE.db') #criação do banco, rodar uma vez
+database = Database('DATABASEFILE.db') #criação do banco
 
 
-stest1 = Setor(name='stest7')
-stest2 = Setor(name='stest6')
-data_setores = [stest1.name]
 cursor = DatabaseControler.conect_database(database.name)
 DatabaseControler.create_table_chamados(cursor)
 DatabaseControler.create_table_setores(cursor)
-
-#SetorControler.insert_into_setores(database.name,data_setores)
-#print(SetorControler.get_setores(database.name))
-
-        
-chamado_test = Chamado(setor='stest2', data='08/07/2024', item='pc',status='resolvido', descricao='teste 2 do refatoramento')
-#ChamadoControler.insert_into_chamados(database.name, chamado_test)
-#a= ChamadoControler.search_in_chamados_all(database.name)
-#a = ChamadoControler.search_in_chamados_id(database.name, 2)
 
 
 options= SetorControler.update_setor_list(database.name)
@@ -108,7 +81,7 @@ while True:
     if event == 'delete':
         Delete.open_window_delete('Excluir Chamado',database.name,'id', 'id', 'buscar', 'search','deletar','delete')
     
-    if values['file_import'] != "   " or values['file_import'] != None:
+    if values['file_import'] != None and event=='import':    
         database_import = Database(values['file_import'])
         window['setor'].update(SetorControler.update_setor_list(database_import.name))
         database = database_import

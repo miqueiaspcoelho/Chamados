@@ -75,11 +75,14 @@ class SetorControler:
         :return options: list
         """
         setor_list = SetorControler.get_setores(database_name)
-        setor_list.sort()
         options =[]
-        aux=''
-        for x in setor_list:
-            aux = str(x[0])+ '  -  ' + x[1]
-            options.append(aux)
-        return options
+        if setor_list != None or setor_list!="  ":
+            #setor_list.sort()
+            aux=''
+            for x in setor_list:
+                aux = str(x[0])+ '  -  ' + x[1]
+                options.append(aux)
+            return options
+        else:
+            return options
         

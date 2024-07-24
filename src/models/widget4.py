@@ -14,6 +14,6 @@ class Widget4:
             sg.Button('Adicionar Setor', key='add_setor'),
             sg.Button('Atualizar Status', key='update_status'),
             sg.Button('Fechar', button_color='#8B0000', key='exit'),
-            sg.Input(key='file_import', visible=False, enable_events=True), sg.FileBrowse('Importar Dados', button_color="#483D8B")
+            sg.Input(key='file_import', visible=False, enable_events=True), sg.FileBrowse('Importar Dados',key='import', button_color="#483D8B")
         ]
         return widget4
