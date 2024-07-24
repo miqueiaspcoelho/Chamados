@@ -105,12 +105,12 @@ class ChamadoControler:
         
         else:
             try:
-                if field_name=="Descricao":
+                if field_name=="Descricao" or field_name=="Setor":
                     filter = '%'+filter+'%'
                     conn = DatabaseControler.conect_database(database_name)
                     cursor = conn.cursor()
                     cursor.execute(f'''
-                    SELECT Id, Descricao, Data, Item, Status, Descricao FROM Chamados WHERE {field_name} LIKE ?;
+                    SELECT * FROM Chamados WHERE {field_name} LIKE ?;
                     ''',(filter,))
                     rows = cursor.fetchall()
                     if rows == '' or rows is None or len(rows)==0:

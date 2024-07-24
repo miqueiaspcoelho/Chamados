@@ -68,10 +68,10 @@ layout = Layout.show((Widget1.show(options)),
                 Widget4.show(),
                 Widget5.show()
                 )
-window = sg.Window('Gerenciador de chamados', layout ,resizable = True)
+window = sg.Window('Gerenciador de chamados', layout ,resizable = True, element_justification='left')
 while True:
     event, values = window.read()
-    if event == sg.WIN_CLOSED or event == 'exit': # if user closes window or clicks exit
+    if event in (sg.WIN_CLOSED, 'exit'): # if user closes window or clicks exit
         break
         
     if event == 'insert':
@@ -107,6 +107,12 @@ while True:
    
     if event == 'delete':
         Delete.open_window_delete('Excluir Chamado',database.name,'id', 'id', 'buscar', 'search','deletar','delete')
+    
+    if values['file_import'] != "   " or values['file_import'] != None:
+        database_import = Database(values['file_import'])
+        window['setor'].update(SetorControler.update_setor_list(database_import.name))
+        database = database_import
+        
         
         
 window.close()

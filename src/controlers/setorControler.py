@@ -66,7 +66,7 @@ class SetorControler:
             print(e)
             
     @classmethod
-    def update_setor_list(cls, database_name):
+    def update_setor_list(cls, database_name:str) -> list:
         """
         Responsável por fazer a atualização da lista de setores sempre que um novo setor é inserido.
         Não recebe parâmetros de entrada.
