@@ -81,7 +81,7 @@ while True:
     if event == 'delete':
         Delete.open_window_delete('Excluir Chamado',database.name,'id', 'id', 'buscar', 'search','deletar','delete')
     
-    if values['file_import'] != None and event=='import':    
+    if  event=='import':
         database_import = Database(values['file_import'])
         window['setor'].update(SetorControler.update_setor_list(database_import.name))
         database = database_import

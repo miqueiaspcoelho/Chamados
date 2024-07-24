@@ -7,13 +7,14 @@ o botão de pesquisar abre uma nova janela para realizar uma busca'''
 
 class Widget4:
     def show():
-        widget4 = [
+        widget4 = [[
             sg.Button('Cadastrar',key='insert', button_color="#2F4F4F"), 
             sg.Button('Pesquisar',key='search'),
             sg.Button('Excluir', key='delete'),
             sg.Button('Adicionar Setor', key='add_setor'),
             sg.Button('Atualizar Status', key='update_status'),
-            sg.Button('Fechar', button_color='#8B0000', key='exit'),
-            sg.Input(key='file_import', visible=False, enable_events=True), sg.FileBrowse('Importar Dados',key='import', button_color="#483D8B")
+            sg.Button('Fechar', button_color='#8B0000', key='exit')],
+            [sg.Input(key='file_import', visible=True, enable_events=True), sg.FileBrowse('Buscar Dados', button_color="#483D8B")],
+            sg.Button('Importar',key='import')
         ]
         return widget4
