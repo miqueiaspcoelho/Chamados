@@ -41,7 +41,7 @@ for i in ChamadoControler.show_chamados():
     print(i.data, i.descricao)
 '''
 #addSetor.add_setor() #tela setor
-database = Database('Teste.db') #criação do banco, rodar uma vez
+database = Database('DATABASEFILE.db') #criação do banco, rodar uma vez
 
 
 stest1 = Setor(name='stest7')
