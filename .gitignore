@@ -1,1 +1,9 @@
 DATABASEFILE.db
+dist
+build
+*.spec
+*.ico
+*.db
+*.sql
+*.sqlite
+__pycache__
