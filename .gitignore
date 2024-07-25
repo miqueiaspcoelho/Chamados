@@ -7,3 +7,4 @@ build
 *.sql
 *.sqlite
 __pycache__
+*.txt

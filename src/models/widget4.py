@@ -15,6 +15,7 @@ class Widget4:
             sg.Button('Atualizar Status', key='update_status'),
             sg.Button('Fechar', button_color='#8B0000', key='exit')],
             [sg.Input(key='file_import', visible=True, enable_events=True), sg.FileBrowse('Buscar Dados', button_color="#483D8B")],
-            sg.Button('Importar',key='import')
+            [sg.Button('Importar',key='import')],
+            sg.Text('Desenvolvido por: Miquéias Coelho')
         ]
         return widget4
