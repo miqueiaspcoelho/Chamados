@@ -38,6 +38,7 @@ class AddSetor:
                 setor_list.append(s1.name)
                 if s1.name not in SetorControler.get_setores(database_name):
                     SetorControler.insert_into_setores(database_name, setor_list)
+                    setor_list=[]
                     
 
         window.close()

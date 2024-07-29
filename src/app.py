@@ -28,11 +28,9 @@ from models.layout import Layout
 
 database = Database('DATABASEFILE.db') #criação do banco
 
-
 cursor = DatabaseControler.conect_database(database.name)
 DatabaseControler.create_table_chamados(cursor)
 DatabaseControler.create_table_setores(cursor)
-
 
 options= SetorControler.update_setor_list(database.name)
 layout = Layout.show((Widget1.show(options)),
@@ -48,7 +46,6 @@ while True:
         break
         
     if event == 'insert':
-
         #formatação das datas
         data_completa = values['day'] + '/' + values['month'] + '/' + values['year']
 

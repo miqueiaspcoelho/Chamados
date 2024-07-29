@@ -76,8 +76,7 @@ class SetorControler:
         """
         setor_list = SetorControler.get_setores(database_name)
         options =[]
-        if setor_list != None or setor_list!="  ":
-            #setor_list.sort()
+        if setor_list!= None or setor_list!="":
             aux=''
             for x in setor_list:
                 aux = str(x[0])+ '  -  ' + x[1]
