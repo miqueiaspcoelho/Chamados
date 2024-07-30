@@ -134,7 +134,7 @@ class ChamadoControler:
             conn.close()
     
     @staticmethod
-    def update_status_chamado (database_name: str, status:str, id: int) -> None:
+    def update_status_chamado (database_name: str, status:str, id: str) -> None:
         """
         Com base em id informado é feita a atualização do status
         (Resolvido, Pendente, Manutenção,
@@ -146,9 +146,8 @@ class ChamadoControler:
         :return void
         """
         id_list = DatabaseControler.select_all_id_from_chamados(database_name)
-        
         try:
-            if id in id_list:
+            if int(id) in id_list:
                 conn = DatabaseControler.conect_database(database_name)
                 cursor = conn.cursor()
                 cursor.execute('''
