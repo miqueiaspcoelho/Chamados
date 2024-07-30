@@ -9,7 +9,7 @@ class Widget2:
     def show():
         widget2 = [
             [sg.Text('Selecione o tipo', tooltip='Marque em quais itens foi o problema')],
-            [sg.Radio('Computador', group_id='item', key='Computador')],
+            [sg.Radio('Computador', group_id='item', key='Computador', default=True)],
             [sg.Radio('Impressora',group_id='item',key='Impressora')],
             [sg.Radio('Rede', group_id='item',key='Rede')],
             [sg.Radio('Teclado', group_id='item',key='Teclado')],

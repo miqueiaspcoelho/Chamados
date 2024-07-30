@@ -201,9 +201,10 @@ class ChamadoControler:
         Com base em id informado um chamado é deletado do banco de dados
         Como retorno há um popup que informa o sucesso ou falha na operação.
 
-        :param name_db: string
-        :status: string
-        :return void
+        :param database_name: string
+        :param id: string
+        
+        :return None
         """
         try:
             conn = DatabaseControler.conect_database(database_name)
@@ -219,3 +220,30 @@ class ChamadoControler:
             print(e)
             sg.PopupTimed('Erro na operação')
         conn.close()
+        
+    @staticmethod
+    def verification_valid_options(setor: str, data:str, item: str, status=str) -> bool:
+        """
+        verifica se é possível ou não o cadastro do chamado com base nas informações adicionadas em tela pelo usuário
+        tem por objetivo minimizar erros de inserção, tornando obrigatório que todos os chamados tenham:
+        setor válido, data, item, status, sendo facultativo a descrição
+
+        :param setor: string
+        :param data: string
+        :param item: string
+        :param: status: string
+        
+        :return boll
+        """
+        list_check = [setor, item, status]
+        
+        for option in list_check:
+            print(len(option))
+            if len(option)<1 or option=='empty' or len(data)<10:
+                sg.PopupTimed(f'Preencha Corretamente as Informações')
+                return False
+            else:
+                return True
+                
+       
+        

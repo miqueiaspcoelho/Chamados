@@ -50,17 +50,27 @@ while True:
         data_completa = values['day'] + '/' + values['month'] + '/' + values['year']
 
         #checando radio buttons marcados e pegando o valor
-        lista_radio_buttons = []
+        lista_radio_buttons = ["",""]
         for x in values.keys():
             if values[x] == True:
                 lista_radio_buttons.append(x)
         item = lista_radio_buttons[0]
         status = lista_radio_buttons[1]
-        setor = values['setor'][0]
-        descricao = values['description']
         
-        chamado = Chamado(setor=setor, data=data_completa, item=item,status=status, descricao=descricao)
-        ChamadoControler.insert_into_chamados(database.name, chamado)
+        if values['setor']!=[]:
+            setor = values['setor'][0]
+            
+        else:
+            setor = 'empty'
+            
+        descricao = values['description']
+        check = ChamadoControler.verification_valid_options(setor, data_completa, item, status)
+        
+        if check == True:
+            chamado = Chamado(setor=setor, data=data_completa, item=item,status=status, descricao=descricao)
+            ChamadoControler.insert_into_chamados(database.name, chamado)
+        if check == False:
+            pass
         
     if event == 'add_setor':
         AddSetor.add_setor(database.name)
