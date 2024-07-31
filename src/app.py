@@ -82,7 +82,7 @@ while True:
     
     
     if event == 'update_status':
-        Update.open_window_update('Atualizar Status',database.name,['Resolvido','Pendente','Manutenção', 'Troca', 'RealJet Aberto','RealJet Resolvido'], 'status', 'filter', 'confirmar', 'update')
+        Update.open_window_update('Atualizar Status',database.name,['Resolvido', 'Aguardando', 'Pendente', 'Manutenção Preventiva', 'Manutenção Corretiva', 'Troca', 'Reparo', 'Pedido Efetuado', 'Pedido Recebido'], 'status', 'filter', 'confirmar', 'update')
     
    
     if event == 'delete':
