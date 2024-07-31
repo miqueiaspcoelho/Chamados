@@ -238,7 +238,6 @@ class ChamadoControler:
         list_check = [setor, item, status]
         
         for option in list_check:
-            print(len(option))
             if len(option)<1 or option=='empty' or len(data)<10:
                 sg.PopupTimed(f'Preencha Corretamente as Informações')
                 return False
