@@ -50,7 +50,7 @@ while True:
         data_completa = values['day'] + '/' + values['month'] + '/' + values['year']
 
         #checando radio buttons marcados e pegando o valor
-        lista_radio_buttons = ["",""]
+        lista_radio_buttons = []
         for x in values.keys():
             if values[x] == True:
                 lista_radio_buttons.append(x)
@@ -67,7 +67,7 @@ while True:
         check = ChamadoControler.verification_valid_options(setor, data_completa, item, status)
         
         if check == True:
-            chamado = Chamado(setor=setor, data=data_completa, item=item,status=status, descricao=descricao)
+            chamado = Chamado(setor=setor, data=data_completa, item=item, status=status, descricao=descricao)
             ChamadoControler.insert_into_chamados(database.name, chamado)
         if check == False:
             pass
