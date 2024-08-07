@@ -11,10 +11,10 @@ Leia atentamente as seções abaixo para executar corretamente os scripts desse 
 Para rodar o código será necessário apenas a instalação do PySimpleGUI, biblioteca gráfica utilizada, porém, logo o projeto migrará para a utilização da FreeSimpleGUI, biblioteca open source e que importa em si as mesmas features da PySimpleGUI. Ao desenvolver o projeto utilizei a versão 4.6 do PySimpleGUI, porém, qualquer versão posterior funcionará corretamente. É fundamental **ter o interpretador Python instalado para conseguir executar o código.**
 
 Instalando o Python
-1 - Acesse o link: <https://www.python.org/downloads/>
-2 - Efetue o download da versão mais recente
-3 - Execute e continue com a instalação
-**4- Marcar a opção de adicionar variável de ambiente ao PATH**
+* Acesse o link: <https://www.python.org/downloads/>
+* Efetue o download da versão mais recente
+* Execute e continue com a instalação
+* **4- Marcar a opção de adicionar variável de ambiente ao PATH**
 
 ### 🔧 Instalação
 
