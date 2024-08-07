@@ -59,7 +59,7 @@ Dar exemplos
 
 Para criação de um executável, passo que eu realizei, porém, deixo a cargo do leitor, será necessário utilizar alguma ferramenta que gere executáveis por meio de scripts python. 
 Em meu caso utilizei o [***pyinstaller***](https://pyinstaller.org/en/stable/) ferramenta já consolidada e que possui uma vasta documentação, por meio dela gerei um executável do código, mas desejei ir mais além, utilizando o [***inno setup***](https://jrsoftware.org/isinfo.php) montei um instalador para windows que torna a aplicação agora um programa que pode ser instalado no windows, sim, muito legal.
-Deixo como referência o canal do YouTube [Python Simplified](https://www.youtube.com/@PythonSimplified) que possui muitas informações legais e interessantes a respeito de programação utilizando python, foi neste canal do YouTube que encontrei um [vídeo](https://www.youtube.com/watch?v=p3tSLatmGvU) que me ajudou bastante a estudar, assim como, entender melhor as ferramentas citada anteriormente.
+Deixo como referência o canal do YouTube [Python Simplified](https://www.youtube.com/@PythonSimplified) que possui muitas informações legais e interessantes a respeito de programação utilizando python, foi neste canal do YouTube que encontrei um [vídeo](https://www.youtube.com/watch?v=p3tSLatmGvU) que me ajudou bastante a estudar, assim como, entender melhor as ferramentas citadas anteriormente.
 
 ## 🛠️ Construído com
 
