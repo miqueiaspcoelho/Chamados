@@ -14,7 +14,7 @@ Instalando o Python
 * Acesse o link: <https://www.python.org/downloads/>
 * Efetue o download da versão mais recente
 * Execute e continue com a instalação
-* **4- Marcar a opção de adicionar variável de ambiente ao PATH**
+* **Marcar a opção de adicionar variável de ambiente ao PATH**
 
 ### 🔧 Instalação
 
