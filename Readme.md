@@ -63,7 +63,6 @@ Deixo como referência o canal do YouTube [Python Simplified](https://www.youtub
 
 ## 🛠️ Construído com
 
-Mencione as ferramentas que você usou para criar seu projeto
 
 * [Python](https://www.python.org/) - Linguagem Utilizada
 * [Pip](https://pip.pypa.io/en/stable/) - Gerenciador de pacotes
