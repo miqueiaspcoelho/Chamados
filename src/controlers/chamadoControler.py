@@ -36,11 +36,13 @@ class ChamadoControler:
     @staticmethod
     def insert_into_chamados(database_name: str, data: list) -> None:
         """
-        Adiciona um chamado na tabela de chamados
+        Adiciona um chamado na tabela de chamados. 
+        try -> conecta ao banco e executa a query para insetir os dados do chamado
+        execpt -> mostra tela de erro e printa o erro ocorrido
 
-        :param name_db: string
+        :param database_name: string
         :param data: list
-        :return void
+        :return None
         """
         try:
             conn = DatabaseControler.conect_database(database_name)
@@ -64,10 +66,11 @@ class ChamadoControler:
     def search_in_chamados_all(database_name: str) -> list:
         """
         Faz uma busca geral, ou seja, lista todos os chamados existentes.
-        retorna todos os chamados existentes
+        retorna todos os chamados existentes.
+        try -> conecta ao banco e executa a query para buscar todos os chamados
+        execpt -> mostra tela de erro e printa o erro ocorrido
 
-        :param name_db: string
-        :filter: string
+        :param database_name: string
         :return rows: list
         """
         try:
@@ -92,11 +95,18 @@ class ChamadoControler:
     @staticmethod
     def search_in_chamados(database_name: str, field_name:str,  filter: str) -> list:
         """
-        Faz uma pesquisa na tabela de chamados de acordo o id único do chamado
-        retornando todos os chamados referentes ao id informado.
+        Faz uma pesquisa na tabela de chamados de acordo uma categoria de filtro informado e o valor do mesmo.
+        Retorna todos os resultados encontrados de acordo com o filtro informado.
+        Possui algumas excessões.
+        field_name == Todos -> search_in_chamados_all
+        
+        field_name == Descricao ou Setor -> a query é feita de forma a pesquisar por
+        palavras chaves, se a descrição de um chamado tiver a palavra indica ele é retornado
+        Também é utilizado bloco try execpt como nas funções acima
 
-        :param name_db: string
-        :filter: string
+        :param database_name: string
+        :param field_name: string
+        :param filter: string
         :return rows: list
         """
         if field_name=="Todos":
@@ -136,14 +146,13 @@ class ChamadoControler:
     @staticmethod
     def update_status_chamado (database_name: str, status:str, id: str) -> None:
         """
-        Com base em id informado é feita a atualização do status
-        (Resolvido, Pendente, Manutenção,
-        RealJet Pendente, RealJet Resolvido).
-        Como retorno há um popup que informa o sucesso ou falha na operaçao
+        Com base em id informado é feita a atualização do status, dentro das opções setadas no view de update.
+        Essa atualização em banco funciona por meio de querys, na tela é exibido pop up de sucesso ou falha
+        Também é utilizado bloco try execpt como nas funções acima
 
-        :param name_db: string
-        :status: string
-        :return void
+        :param database_name: string
+        :param status: string
+        :return None
         """
         id_list = DatabaseControler.select_all_id_from_chamados(database_name)
         try:
@@ -170,10 +179,12 @@ class ChamadoControler:
         """
         Recebe os dados já do banco de dados para serem exibidos em tela.
         Renderiza uma tela que faz a exibição de todos os itens que foram fornecidos
-        dentro do vetor dado como parâmetro
+        dentro do vetor dado como parâmetro.
+        Utiliza mais elementos de view, porém, como não havia uma tela especifica e é 
+        uma chamada de função para exibir os chamados, foi adicionada dentro do controler de chamados
 
-        :param dados: list
-        :return void
+        :param row: list
+        :return None
         """
         
         number = str(len(rows))
@@ -200,6 +211,7 @@ class ChamadoControler:
         """
         Com base em id informado um chamado é deletado do banco de dados
         Como retorno há um popup que informa o sucesso ou falha na operação.
+        Também é utilizado bloco try execpt como nas funções acima
 
         :param database_name: string
         :param id: string
@@ -224,7 +236,7 @@ class ChamadoControler:
     @staticmethod
     def verification_valid_options(setor: str, data:str, item: str, status=str) -> bool:
         """
-        verifica se é possível ou não o cadastro do chamado com base nas informações adicionadas em tela pelo usuário
+        Verifica se é possível ou não o cadastro do chamado com base nas informações adicionadas em tela pelo usuário
         tem por objetivo minimizar erros de inserção, tornando obrigatório que todos os chamados tenham:
         setor válido, data, item, status, sendo facultativo a descrição
 
@@ -243,6 +255,3 @@ class ChamadoControler:
                 return False
             else:
                 return True
-                
-       
-        
