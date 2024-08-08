@@ -10,20 +10,22 @@ from models.database import Database
 import FreeSimpleGUI as sg
 
 class DatabaseControler:
+
     #conectando/criando o banco, caso ele não exista
-    
     @staticmethod
     def conect_database(database_name: str) -> object:
         """
         Responsável por criar uma conexão com o banco de dados
-
+        try -> estabelece uma conexão com o banco de dados
+        except -> informa o erro em caso de erro na operação anterior
+        
         :param database_name: string
-        :return connection: obj
+        :return conn: object
 
         """
         try:
             conn = sqlite3.connect(database_name)
-            print("Database Sqlite3.db formed.")
+            print("Database Sqlite3.db connect.")
             return conn
         except Error as e:
             print(e)
@@ -34,9 +36,11 @@ class DatabaseControler:
     def create_table_chamados(cursor: object) -> None:
         """
         Caso não exista, cria uma tabela de chamados em um banco de dados sqlite3
+        try -> query para criar a tabela Chamados, caso não exista no banco em questão
+        except -> informa o erro em caso de erro na operação anterior
 
-        :param cursor: obj
-        :return void
+        :param cursor: object
+        :return None
         """
         try:
             cursor.execute('''
@@ -77,8 +81,17 @@ class DatabaseControler:
             print(e)
             print('Erro ao criar a tabela')
     
+    #retornando os identificadores de cada chamado
     @staticmethod
-    def select_all_id_from_chamados(database_name:str):
+    def select_all_id_from_chamados(database_name:str) -> list:
+        """
+        Retorna todos os identificadores únicos da tabela chamados
+        try-> query para executar a operação de retornar os identificadores únicos de cada chamados
+        except -> informa o erro em caso de erro na operação anterior
+        
+        :param database_name:string
+        :return id_elements_list: list
+        """
         id_elements_list=[]
         try:
             conn = DatabaseControler.conect_database(database_name)
@@ -92,4 +105,3 @@ class DatabaseControler:
             
         except Error as e:
             print(e)
-        
