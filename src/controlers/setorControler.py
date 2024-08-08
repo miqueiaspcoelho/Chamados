@@ -15,14 +15,17 @@ from controlers.databaseControler import DatabaseControler
 class SetorControler:
 
     #insere dados na tabela de setores
-    @classmethod
-    def insert_into_setores(cls, database_name: str, data: list) -> None:
+    @staticmethod
+    def insert_into_setores(database_name: str, data: list) -> None:
         """
         Adiciona um setor a tabela de setores
+        try -> conecta ao banco de dados informado e caso o setor não tenha 
+        sido cadastrado, cadastra na tabela de setores
+        except -> informa o erro em caso de erro na operação anterior
 
         :param database_name: string
         :param data: list
-        :return void
+        :return None
         """
         try:
             conn = DatabaseControler.conect_database(database_name)
@@ -42,13 +45,16 @@ class SetorControler:
         
         
     #pegando todos os setores disponíveis no banco
-    @classmethod
-    def get_setores(cls, database_name: str) -> object:
+    @staticmethod
+    def get_setores(database_name: str) -> object:
         """
         Faz uma busca na tabela setores e retorna uma lista com todos os setores cadastrados
+        try -> conecta ao banco de dados e seleciona todos os setores existentes da 
+        tabela setores
+        except -> informa o erro em caso de erro na operação anterior
 
-        :param name_db: string
-        :return rows: list
+        :param database_name: string
+        :return rows: object
         """
         try:
             conn = DatabaseControler.conect_database(database_name)
@@ -65,13 +71,14 @@ class SetorControler:
         except Error as e:
             print(e)
             
-    @classmethod
-    def update_setor_list(cls, database_name:str) -> list:
+            
+    #atualiza a lista de setores
+    @staticmethod
+    def update_setor_list(database_name:str) -> list:
         """
         Responsável por fazer a atualização da lista de setores sempre que um novo setor é inserido.
-        Não recebe parâmetros de entrada.
 
-        :param None
+        :param database_name:string
         :return options: list
         """
         setor_list = SetorControler.get_setores(database_name)
