@@ -89,10 +89,6 @@ Deixo como referência o canal do YouTube [Python Simplified](https://www.youtub
 
 
 ---
-<<<<<<< HEAD
-Readme Criado à partir do template criado por:
- [Armstrong Lohãns](https://gist.github.com/lohhans) 😊
-=======
 Template Criado à partir do template criado por:
  [Armstrong Lohãns](https://gist.github.com/lohhans) 😊
->>>>>>> a7eb7bf6da08ffb79e14f493ddb4c6175eb211c8
+
