@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module chamadoControler</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">chamadoControler</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cmique%5Conedrive%5C%C3%A1rea%20de%20trabalho%5Cchamado_refatorado%5Csrc%5Ccontrolers%5Cchamadocontroler.py">c:\users\mique\onedrive\área de trabalho\chamado_refatorado\src\controlers\chamadocontroler.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="FreeSimpleGUI.html">FreeSimpleGUI</a><br>
+</td><td class="multicolumn"><a href="sqlite3.html">sqlite3</a><br>
+</td><td class="multicolumn"><a href="sys.html">sys</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="chamadoControler.html#ChamadoControler">ChamadoControler</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="ChamadoControler">class <strong>ChamadoControler</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor"><span class="code">&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="ChamadoControler-delete_chamado"><strong>delete_chamado</strong></a>(database_name: str, id: str) -&gt; None</dt><dd><span class="code">Com&nbsp;base&nbsp;em&nbsp;id&nbsp;informado&nbsp;um&nbsp;chamado&nbsp;é&nbsp;deletado&nbsp;do&nbsp;banco&nbsp;de&nbsp;dados<br>
+Como&nbsp;retorno&nbsp;há&nbsp;um&nbsp;popup&nbsp;que&nbsp;informa&nbsp;o&nbsp;sucesso&nbsp;ou&nbsp;falha&nbsp;na&nbsp;operação.<br>
+Também&nbsp;é&nbsp;utilizado&nbsp;bloco&nbsp;try&nbsp;execpt&nbsp;como&nbsp;nas&nbsp;funções&nbsp;acima<br>
+&nbsp;<br>
+:param&nbsp;database_name:&nbsp;string<br>
+:param&nbsp;id:&nbsp;string<br>
+&nbsp;<br>
+:return&nbsp;None</span></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="ChamadoControler-insert_into_setores"><strong>insert_into_setores</strong></a>(setor: str) -&gt; None<span class="grey"><span class="heading-text"> from <a href="builtins.html#type">builtins.type</a></span></span></dt></dl>
+
+<dl><dt><a name="ChamadoControler-save_chamado"><strong>save_chamado</strong></a>(chamado: models.chamado.Chamado) -&gt; None<span class="grey"><span class="heading-text"> from <a href="builtins.html#type">builtins.type</a></span></span></dt></dl>
+
+<dl><dt><a name="ChamadoControler-show_chamados"><strong>show_chamados</strong></a>() -&gt; List[models.chamado.Chamado]<span class="grey"><span class="heading-text"> from <a href="builtins.html#type">builtins.type</a></span></span></dt></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="ChamadoControler-insert_into_chamados"><strong>insert_into_chamados</strong></a>(database_name: str, data: list) -&gt; None</dt><dd><span class="code">Adiciona&nbsp;um&nbsp;chamado&nbsp;na&nbsp;tabela&nbsp;de&nbsp;chamados.&nbsp;<br>
+try&nbsp;-&gt;&nbsp;conecta&nbsp;ao&nbsp;banco&nbsp;e&nbsp;executa&nbsp;a&nbsp;query&nbsp;para&nbsp;insetir&nbsp;os&nbsp;dados&nbsp;do&nbsp;chamado<br>
+execpt&nbsp;-&gt;&nbsp;mostra&nbsp;tela&nbsp;de&nbsp;erro&nbsp;e&nbsp;printa&nbsp;o&nbsp;erro&nbsp;ocorrido<br>
+&nbsp;<br>
+:param&nbsp;database_name:&nbsp;string<br>
+:param&nbsp;data:&nbsp;list<br>
+:return&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="ChamadoControler-search_in_chamados"><strong>search_in_chamados</strong></a>(database_name: str, field_name: str, filter: str) -&gt; list</dt><dd><span class="code">Faz&nbsp;uma&nbsp;pesquisa&nbsp;na&nbsp;tabela&nbsp;de&nbsp;chamados&nbsp;de&nbsp;acordo&nbsp;uma&nbsp;categoria&nbsp;de&nbsp;filtro&nbsp;informado&nbsp;e&nbsp;o&nbsp;valor&nbsp;do&nbsp;mesmo.<br>
+Retorna&nbsp;todos&nbsp;os&nbsp;resultados&nbsp;encontrados&nbsp;de&nbsp;acordo&nbsp;com&nbsp;o&nbsp;filtro&nbsp;informado.<br>
+Possui&nbsp;algumas&nbsp;excessões.<br>
+field_name&nbsp;==&nbsp;Todos&nbsp;-&gt;&nbsp;search_in_chamados_all<br>
+&nbsp;<br>
+field_name&nbsp;==&nbsp;Descricao&nbsp;ou&nbsp;Setor&nbsp;-&gt;&nbsp;a&nbsp;query&nbsp;é&nbsp;feita&nbsp;de&nbsp;forma&nbsp;a&nbsp;pesquisar&nbsp;por<br>
+palavras&nbsp;chaves,&nbsp;se&nbsp;a&nbsp;descrição&nbsp;de&nbsp;um&nbsp;chamado&nbsp;tiver&nbsp;a&nbsp;palavra&nbsp;indica&nbsp;ele&nbsp;é&nbsp;retornado<br>
+Também&nbsp;é&nbsp;utilizado&nbsp;bloco&nbsp;try&nbsp;execpt&nbsp;como&nbsp;nas&nbsp;funções&nbsp;acima<br>
+&nbsp;<br>
+:param&nbsp;database_name:&nbsp;string<br>
+:param&nbsp;field_name:&nbsp;string<br>
+:param&nbsp;filter:&nbsp;string<br>
+:return&nbsp;rows:&nbsp;list</span></dd></dl>
+
+<dl><dt><a name="ChamadoControler-search_in_chamados_all"><strong>search_in_chamados_all</strong></a>(database_name: str) -&gt; list</dt><dd><span class="code">Faz&nbsp;uma&nbsp;busca&nbsp;geral,&nbsp;ou&nbsp;seja,&nbsp;lista&nbsp;todos&nbsp;os&nbsp;chamados&nbsp;existentes.<br>
+retorna&nbsp;todos&nbsp;os&nbsp;chamados&nbsp;existentes.<br>
+try&nbsp;-&gt;&nbsp;conecta&nbsp;ao&nbsp;banco&nbsp;e&nbsp;executa&nbsp;a&nbsp;query&nbsp;para&nbsp;buscar&nbsp;todos&nbsp;os&nbsp;chamados<br>
+execpt&nbsp;-&gt;&nbsp;mostra&nbsp;tela&nbsp;de&nbsp;erro&nbsp;e&nbsp;printa&nbsp;o&nbsp;erro&nbsp;ocorrido<br>
+&nbsp;<br>
+:param&nbsp;database_name:&nbsp;string<br>
+:return&nbsp;rows:&nbsp;list</span></dd></dl>
+
+<dl><dt><a name="ChamadoControler-show_results"><strong>show_results</strong></a>(rows: list) -&gt; None</dt><dd><span class="code">Recebe&nbsp;os&nbsp;dados&nbsp;já&nbsp;do&nbsp;banco&nbsp;de&nbsp;dados&nbsp;para&nbsp;serem&nbsp;exibidos&nbsp;em&nbsp;tela.<br>
+Renderiza&nbsp;uma&nbsp;tela&nbsp;que&nbsp;faz&nbsp;a&nbsp;exibição&nbsp;de&nbsp;todos&nbsp;os&nbsp;itens&nbsp;que&nbsp;foram&nbsp;fornecidos<br>
+dentro&nbsp;do&nbsp;vetor&nbsp;dado&nbsp;como&nbsp;parâmetro.<br>
+Utiliza&nbsp;mais&nbsp;elementos&nbsp;de&nbsp;view,&nbsp;porém,&nbsp;como&nbsp;não&nbsp;havia&nbsp;uma&nbsp;tela&nbsp;especifica&nbsp;e&nbsp;é&nbsp;<br>
+uma&nbsp;chamada&nbsp;de&nbsp;função&nbsp;para&nbsp;exibir&nbsp;os&nbsp;chamados,&nbsp;foi&nbsp;adicionada&nbsp;dentro&nbsp;do&nbsp;controler&nbsp;de&nbsp;chamados<br>
+&nbsp;<br>
+:param&nbsp;row:&nbsp;list<br>
+:return&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="ChamadoControler-update_status_chamado"><strong>update_status_chamado</strong></a>(database_name: str, status: str, id: str) -&gt; None</dt><dd><span class="code">Com&nbsp;base&nbsp;em&nbsp;id&nbsp;informado&nbsp;é&nbsp;feita&nbsp;a&nbsp;atualização&nbsp;do&nbsp;status,&nbsp;dentro&nbsp;das&nbsp;opções&nbsp;setadas&nbsp;no&nbsp;view&nbsp;de&nbsp;update.<br>
+Essa&nbsp;atualização&nbsp;em&nbsp;banco&nbsp;funciona&nbsp;por&nbsp;meio&nbsp;de&nbsp;querys,&nbsp;na&nbsp;tela&nbsp;é&nbsp;exibido&nbsp;pop&nbsp;up&nbsp;de&nbsp;sucesso&nbsp;ou&nbsp;falha<br>
+Também&nbsp;é&nbsp;utilizado&nbsp;bloco&nbsp;try&nbsp;execpt&nbsp;como&nbsp;nas&nbsp;funções&nbsp;acima<br>
+&nbsp;<br>
+:param&nbsp;database_name:&nbsp;string<br>
+:param&nbsp;status:&nbsp;string<br>
+:return&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="ChamadoControler-verification_valid_options"><strong>verification_valid_options</strong></a>(setor: str, data: str, item: str, status=&lt;class 'str'&gt;) -&gt; bool</dt><dd><span class="code">Verifica&nbsp;se&nbsp;é&nbsp;possível&nbsp;ou&nbsp;não&nbsp;o&nbsp;cadastro&nbsp;do&nbsp;chamado&nbsp;com&nbsp;base&nbsp;nas&nbsp;informações&nbsp;adicionadas&nbsp;em&nbsp;tela&nbsp;pelo&nbsp;usuário<br>
+tem&nbsp;por&nbsp;objetivo&nbsp;minimizar&nbsp;erros&nbsp;de&nbsp;inserção,&nbsp;tornando&nbsp;obrigatório&nbsp;que&nbsp;todos&nbsp;os&nbsp;chamados&nbsp;tenham:<br>
+setor&nbsp;válido,&nbsp;data,&nbsp;item,&nbsp;status,&nbsp;sendo&nbsp;facultativo&nbsp;a&nbsp;descrição<br>
+&nbsp;<br>
+:param&nbsp;setor:&nbsp;string<br>
+:param&nbsp;data:&nbsp;string<br>
+:param&nbsp;item:&nbsp;string<br>
+:param:&nbsp;status:&nbsp;string<br>
+&nbsp;<br>
+:return&nbsp;boll</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>chamados</strong> = []</dl>
+
+<dl><dt><strong>setores</strong> = []</dl>
+
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>List</strong> = typing.List<br>
+<strong>file</strong> = WindowsPath('C:/Users/mique/OneDrive/Área de Tra...o_Refatorado/src/controlers/chamadoControler.py')<br>
+<strong>parent</strong> = WindowsPath('C:/Users/mique/OneDrive/Área de Trabalho/Chamado_Refatorado/src/controlers')<br>
+<strong>root</strong> = WindowsPath('C:/Users/mique/OneDrive/Área de Trabalho/Chamado_Refatorado/src')</td></tr></table>
+</body></html>

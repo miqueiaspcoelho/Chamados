@@ -8,7 +8,7 @@ import sqlite3
 from sqlite3 import Error
 from models.setor import Setor
 from typing import List
-import PySimpleGUI as sg
+import FreeSimpleGUI as sg
 
 from controlers.databaseControler import DatabaseControler
 

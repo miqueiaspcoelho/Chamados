@@ -7,7 +7,7 @@ parent, root = file.parent, file.parents[1]
 sys.path.append(str(root))
 
 from models.database import Database
-import PySimpleGUI as sg
+import FreeSimpleGUI as sg
 
 class DatabaseControler:
     #conectando/criando o banco, caso ele não exista

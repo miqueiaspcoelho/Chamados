@@ -9,27 +9,12 @@ from controlers.databaseControler import DatabaseControler
 
 
 from typing import List
-import PySimpleGUI as sg
+import FreeSimpleGUI as sg
 import sqlite3
 import sqlite3
 from sqlite3 import Error
 
 class ChamadoControler:
-    chamados = []
-    setores = []
-    
-    @classmethod
-    def save_chamado(cls, chamado: Chamado) -> None:
-        cls.chamados.append(chamado)
-    
-    @classmethod
-    def show_chamados(cls) -> List[Chamado]:
-        return cls.chamados
-    
-    @classmethod
-    def insert_into_setores(cls, setor: str) -> None:
-        cls.setores.append(setor)
-        
         
     
     #inserindo um chamado no banco de dados
@@ -91,7 +76,7 @@ class ChamadoControler:
         conn.close()
  
     
-    #pesquisando os dados por Id
+    #pesquisando os dados por algum campo especifico do chamado
     @staticmethod
     def search_in_chamados(database_name: str, field_name:str,  filter: str) -> list:
         """
@@ -143,6 +128,8 @@ class ChamadoControler:
                 print(e)
             conn.close()
     
+    
+    #atualizando o status de um chamado com base no id do chamado
     @staticmethod
     def update_status_chamado (database_name: str, status:str, id: str) -> None:
         """
@@ -173,7 +160,8 @@ class ChamadoControler:
             sg.PopupTimed('Erro na operação')
             
         
-        
+    
+    #exibe os chamados retornados de uma busca
     @staticmethod
     def show_results(rows: list) -> None:
         """
@@ -207,6 +195,7 @@ class ChamadoControler:
         window.close()
         
         
+    #faz a exclusão de um chamado com base no id informado
     def delete_chamado(database_name: str, id: str) -> None:
         """
         Com base em id informado um chamado é deletado do banco de dados
@@ -232,7 +221,9 @@ class ChamadoControler:
             print(e)
             sg.PopupTimed('Erro na operação')
         conn.close()
-        
+    
+    
+    #verifica de um chamado pode não ser inserido, se é um chamado válido
     @staticmethod
     def verification_valid_options(setor: str, data:str, item: str, status=str) -> bool:
         """

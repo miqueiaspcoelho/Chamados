@@ -1,4 +1,4 @@
-import PySimpleGUI as sg
+import FreeSimpleGUI as sg
 #WIDGET5 - status
 '''cada registro de chamado precisa possuir um status, ou seja, se já foi concluído,
 se está pendente, se foi repassado para outra empresa e como está a situação.

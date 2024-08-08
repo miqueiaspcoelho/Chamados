@@ -4,7 +4,7 @@ file = Path(__file__).resolve()
 parent, root = file.parent, file.parents[1]
 sys.path.append(str(root))
 
-import PySimpleGUI as sg #aqui nesse ambiente não aceita algo instalado no venv
+import FreeSimpleGUI as sg #aqui nesse ambiente não aceita algo instalado no venv
 #import FreeSimpleGUI as sg
 
 from models.setor import Setor

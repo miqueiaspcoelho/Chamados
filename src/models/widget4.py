@@ -1,4 +1,4 @@
-import PySimpleGUI as sg
+import FreeSimpleGUI as sg
 #WIDGET4 - botões de ok cancelar e pesquisar
 '''são os responsáveis por gerar ações com base na interação do usuário com as janelas
 o botão de ok cadastra um novo chamado, independente de termos campos vazios ou não

@@ -1,4 +1,4 @@
-import PySimpleGUI as sg
+import FreeSimpleGUI as sg
 #WIDGET2 - checkbox para marcar onde foi o problema
 '''cada radio button pertence ao mesmo grupo, dessa forma, cada chamado pode possuir
 apenas uma categoria de item, uma maneira simples e eficaz de permitir uma seleção única'''

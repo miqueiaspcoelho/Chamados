@@ -1,4 +1,4 @@
-import PySimpleGUI as sg
+import FreeSimpleGUI as sg
 
 #WIDGET3 - descrição
 '''O campo de descrição é um completo, para melhor entender a causa do chamado, como foi solucionado
