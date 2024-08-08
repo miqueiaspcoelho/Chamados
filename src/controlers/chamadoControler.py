@@ -16,7 +16,6 @@ from sqlite3 import Error
 
 class ChamadoControler:
         
-    
     #inserindo um chamado no banco de dados
     @staticmethod
     def insert_into_chamados(database_name: str, data: list) -> None:
@@ -196,6 +195,7 @@ class ChamadoControler:
         
         
     #faz a exclusão de um chamado com base no id informado
+    @staticmethod
     def delete_chamado(database_name: str, id: str) -> None:
         """
         Com base em id informado um chamado é deletado do banco de dados

@@ -39,7 +39,7 @@
 <td class="section-title" colspan=3>&nbsp;<br><a name="ChamadoControler">class <strong>ChamadoControler</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
     
 <tr><td class="decor title-decor"><span class="code">&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
-<td class="singlecolumn">Methods defined here:<br>
+<td class="singlecolumn">Static methods defined here:<br>
 <dl><dt><a name="ChamadoControler-delete_chamado"><strong>delete_chamado</strong></a>(database_name: str, id: str) -&gt; None</dt><dd><span class="code">Com&nbsp;base&nbsp;em&nbsp;id&nbsp;informado&nbsp;um&nbsp;chamado&nbsp;é&nbsp;deletado&nbsp;do&nbsp;banco&nbsp;de&nbsp;dados<br>
 Como&nbsp;retorno&nbsp;há&nbsp;um&nbsp;popup&nbsp;que&nbsp;informa&nbsp;o&nbsp;sucesso&nbsp;ou&nbsp;falha&nbsp;na&nbsp;operação.<br>
 Também&nbsp;é&nbsp;utilizado&nbsp;bloco&nbsp;try&nbsp;execpt&nbsp;como&nbsp;nas&nbsp;funções&nbsp;acima<br>
@@ -49,16 +49,6 @@ Também&nbsp;é&nbsp;utilizado&nbsp;bloco&nbsp;try&nbsp;execpt&nbsp;como&nbsp;na
 &nbsp;<br>
 :return&nbsp;None</span></dd></dl>
 
-<hr>
-Class methods defined here:<br>
-<dl><dt><a name="ChamadoControler-insert_into_setores"><strong>insert_into_setores</strong></a>(setor: str) -&gt; None<span class="grey"><span class="heading-text"> from <a href="builtins.html#type">builtins.type</a></span></span></dt></dl>
-
-<dl><dt><a name="ChamadoControler-save_chamado"><strong>save_chamado</strong></a>(chamado: models.chamado.Chamado) -&gt; None<span class="grey"><span class="heading-text"> from <a href="builtins.html#type">builtins.type</a></span></span></dt></dl>
-
-<dl><dt><a name="ChamadoControler-show_chamados"><strong>show_chamados</strong></a>() -&gt; List[models.chamado.Chamado]<span class="grey"><span class="heading-text"> from <a href="builtins.html#type">builtins.type</a></span></span></dt></dl>
-
-<hr>
-Static methods defined here:<br>
 <dl><dt><a name="ChamadoControler-insert_into_chamados"><strong>insert_into_chamados</strong></a>(database_name: str, data: list) -&gt; None</dt><dd><span class="code">Adiciona&nbsp;um&nbsp;chamado&nbsp;na&nbsp;tabela&nbsp;de&nbsp;chamados.&nbsp;<br>
 try&nbsp;-&gt;&nbsp;conecta&nbsp;ao&nbsp;banco&nbsp;e&nbsp;executa&nbsp;a&nbsp;query&nbsp;para&nbsp;insetir&nbsp;os&nbsp;dados&nbsp;do&nbsp;chamado<br>
 execpt&nbsp;-&gt;&nbsp;mostra&nbsp;tela&nbsp;de&nbsp;erro&nbsp;e&nbsp;printa&nbsp;o&nbsp;erro&nbsp;ocorrido<br>
@@ -125,12 +115,6 @@ Data descriptors defined here:<br>
 <dl><dt><strong>__weakref__</strong></dt>
 <dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
 </dl>
-<hr>
-Data and other attributes defined here:<br>
-<dl><dt><strong>chamados</strong> = []</dl>
-
-<dl><dt><strong>setores</strong> = []</dl>
-
 </td></tr></table></td></tr></table><p>
 <table class="section">
 <tr class="decor data-decor heading-text">
