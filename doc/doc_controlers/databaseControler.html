@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module databaseControler</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">databaseControler</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cmique%5Conedrive%5C%C3%A1rea%20de%20trabalho%5Cchamado_refatorado%5Csrc%5Ccontrolers%5Cdatabasecontroler.py">c:\users\mique\onedrive\área de trabalho\chamado_refatorado\src\controlers\databasecontroler.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="FreeSimpleGUI.html">FreeSimpleGUI</a><br>
+</td><td class="multicolumn"><a href="sqlite3.html">sqlite3</a><br>
+</td><td class="multicolumn"><a href="sys.html">sys</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="databaseControler.html#DatabaseControler">DatabaseControler</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="DatabaseControler">class <strong>DatabaseControler</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor"><span class="code">&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn">Static methods defined here:<br>
+<dl><dt><a name="DatabaseControler-conect_database"><strong>conect_database</strong></a>(database_name: str) -&gt; object</dt><dd><span class="code">Responsável&nbsp;por&nbsp;criar&nbsp;uma&nbsp;conexão&nbsp;com&nbsp;o&nbsp;banco&nbsp;de&nbsp;dados<br>
+try&nbsp;-&gt;&nbsp;estabelece&nbsp;uma&nbsp;conexão&nbsp;com&nbsp;o&nbsp;banco&nbsp;de&nbsp;dados<br>
+except&nbsp;-&gt;&nbsp;informa&nbsp;o&nbsp;erro&nbsp;em&nbsp;caso&nbsp;de&nbsp;erro&nbsp;na&nbsp;operação&nbsp;anterior<br>
+&nbsp;<br>
+:param&nbsp;database_name:&nbsp;string<br>
+:return&nbsp;conn:&nbsp;<a href="builtins.html#object">object</a></span></dd></dl>
+
+<dl><dt><a name="DatabaseControler-create_table_chamados"><strong>create_table_chamados</strong></a>(cursor: object) -&gt; None</dt><dd><span class="code">Caso&nbsp;não&nbsp;exista,&nbsp;cria&nbsp;uma&nbsp;tabela&nbsp;de&nbsp;chamados&nbsp;em&nbsp;um&nbsp;banco&nbsp;de&nbsp;dados&nbsp;sqlite3<br>
+try&nbsp;-&gt;&nbsp;query&nbsp;para&nbsp;criar&nbsp;a&nbsp;tabela&nbsp;Chamados,&nbsp;caso&nbsp;não&nbsp;exista&nbsp;no&nbsp;banco&nbsp;em&nbsp;questão<br>
+except&nbsp;-&gt;&nbsp;informa&nbsp;o&nbsp;erro&nbsp;em&nbsp;caso&nbsp;de&nbsp;erro&nbsp;na&nbsp;operação&nbsp;anterior<br>
+&nbsp;<br>
+:param&nbsp;cursor:&nbsp;<a href="builtins.html#object">object</a><br>
+:return&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="DatabaseControler-create_table_setores"><strong>create_table_setores</strong></a>(cursor: object) -&gt; None</dt><dd><span class="code">Caso&nbsp;não&nbsp;exista,&nbsp;cria&nbsp;uma&nbsp;tabela&nbsp;de&nbsp;setores&nbsp;em&nbsp;um&nbsp;banco&nbsp;de&nbsp;dados&nbsp;sqlite3<br>
+&nbsp;<br>
+:param&nbsp;cursor:&nbsp;obj<br>
+:return&nbsp;void</span></dd></dl>
+
+<dl><dt><a name="DatabaseControler-select_all_id_from_chamados"><strong>select_all_id_from_chamados</strong></a>(database_name: str) -&gt; list</dt><dd><span class="code">Retorna&nbsp;todos&nbsp;os&nbsp;identificadores&nbsp;únicos&nbsp;da&nbsp;tabela&nbsp;chamados<br>
+try-&gt;&nbsp;query&nbsp;para&nbsp;executar&nbsp;a&nbsp;operação&nbsp;de&nbsp;retornar&nbsp;os&nbsp;identificadores&nbsp;únicos&nbsp;de&nbsp;cada&nbsp;chamados<br>
+except&nbsp;-&gt;&nbsp;informa&nbsp;o&nbsp;erro&nbsp;em&nbsp;caso&nbsp;de&nbsp;erro&nbsp;na&nbsp;operação&nbsp;anterior<br>
+&nbsp;<br>
+:param&nbsp;database_name:string<br>
+:return&nbsp;id_elements_list:&nbsp;list</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>file</strong> = WindowsPath('C:/Users/mique/OneDrive/Área de Tra..._Refatorado/src/controlers/databaseControler.py')<br>
+<strong>parent</strong> = WindowsPath('C:/Users/mique/OneDrive/Área de Trabalho/Chamado_Refatorado/src/controlers')<br>
+<strong>root</strong> = WindowsPath('C:/Users/mique/OneDrive/Área de Trabalho/Chamado_Refatorado/src')</td></tr></table>
+</body></html>
