@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module setorControler</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">setorControler</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cmique%5Conedrive%5C%C3%A1rea%20de%20trabalho%5Cchamado_refatorado%5Csrc%5Ccontrolers%5Csetorcontroler.py">c:\users\mique\onedrive\área de trabalho\chamado_refatorado\src\controlers\setorcontroler.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="FreeSimpleGUI.html">FreeSimpleGUI</a><br>
+</td><td class="multicolumn"><a href="sqlite3.html">sqlite3</a><br>
+</td><td class="multicolumn"><a href="sys.html">sys</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="setorControler.html#SetorControler">SetorControler</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="SetorControler">class <strong>SetorControler</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor"><span class="code">&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn">Static methods defined here:<br>
+<dl><dt><a name="SetorControler-get_setores"><strong>get_setores</strong></a>(database_name: str) -&gt; object</dt><dd><span class="code">Faz&nbsp;uma&nbsp;busca&nbsp;na&nbsp;tabela&nbsp;setores&nbsp;e&nbsp;retorna&nbsp;uma&nbsp;lista&nbsp;com&nbsp;todos&nbsp;os&nbsp;setores&nbsp;cadastrados<br>
+try&nbsp;-&gt;&nbsp;conecta&nbsp;ao&nbsp;banco&nbsp;de&nbsp;dados&nbsp;e&nbsp;seleciona&nbsp;todos&nbsp;os&nbsp;setores&nbsp;existentes&nbsp;da&nbsp;<br>
+tabela&nbsp;setores<br>
+except&nbsp;-&gt;&nbsp;informa&nbsp;o&nbsp;erro&nbsp;em&nbsp;caso&nbsp;de&nbsp;erro&nbsp;na&nbsp;operação&nbsp;anterior<br>
+&nbsp;<br>
+:param&nbsp;database_name:&nbsp;string<br>
+:return&nbsp;rows:&nbsp;<a href="builtins.html#object">object</a></span></dd></dl>
+
+<dl><dt><a name="SetorControler-insert_into_setores"><strong>insert_into_setores</strong></a>(database_name: str, data: list) -&gt; None</dt><dd><span class="code">Adiciona&nbsp;um&nbsp;setor&nbsp;a&nbsp;tabela&nbsp;de&nbsp;setores<br>
+try&nbsp;-&gt;&nbsp;conecta&nbsp;ao&nbsp;banco&nbsp;de&nbsp;dados&nbsp;informado&nbsp;e&nbsp;caso&nbsp;o&nbsp;setor&nbsp;não&nbsp;tenha&nbsp;<br>
+sido&nbsp;cadastrado,&nbsp;cadastra&nbsp;na&nbsp;tabela&nbsp;de&nbsp;setores<br>
+except&nbsp;-&gt;&nbsp;informa&nbsp;o&nbsp;erro&nbsp;em&nbsp;caso&nbsp;de&nbsp;erro&nbsp;na&nbsp;operação&nbsp;anterior<br>
+&nbsp;<br>
+:param&nbsp;database_name:&nbsp;string<br>
+:param&nbsp;data:&nbsp;list<br>
+:return&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="SetorControler-update_setor_list"><strong>update_setor_list</strong></a>(database_name: str) -&gt; list</dt><dd><span class="code">Responsável&nbsp;por&nbsp;fazer&nbsp;a&nbsp;atualização&nbsp;da&nbsp;lista&nbsp;de&nbsp;setores&nbsp;sempre&nbsp;que&nbsp;um&nbsp;novo&nbsp;setor&nbsp;é&nbsp;inserido.<br>
+&nbsp;<br>
+:param&nbsp;database_name:string<br>
+:return&nbsp;options:&nbsp;list</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>List</strong> = typing.List<br>
+<strong>file</strong> = WindowsPath('C:/Users/mique/OneDrive/Área de Tra...ado_Refatorado/src/controlers/setorControler.py')<br>
+<strong>parent</strong> = WindowsPath('C:/Users/mique/OneDrive/Área de Trabalho/Chamado_Refatorado/src/controlers')<br>
+<strong>root</strong> = WindowsPath('C:/Users/mique/OneDrive/Área de Trabalho/Chamado_Refatorado/src')</td></tr></table>
+</body></html>
