@@ -8,8 +8,16 @@ do chamado desejado, pois, é nomal que com o passar do tempo eles alteram seu s
 
 class Widget5:
     @staticmethod
-    def show():
-    
+    def show() -> object:
+        """
+        Possui um único método que irá organizar e retornar o elemento
+        que contém as opções de status de um chamado.
+        Por padrão o status resolvido vem selecionado.
+        Como todos os elementos pertencem ao mesmo group_id, apenas um e somente um
+        elemento pode ser selecionado.
+        
+        :return widget5:object
+        """
         column1 = [
             [sg.Radio('Resolvido', group_id='status',key='Resolvido',default=True)],
             [sg.Radio('Aguardando',group_id='status',key='Aguardando')],
