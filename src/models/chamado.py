@@ -15,7 +15,7 @@ class Chamado:
         :param status: string
         :param descricao: string
         
-        return None
+        :return None
         """
         
         self.setor = setor.lower()
