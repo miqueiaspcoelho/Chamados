@@ -1,12 +1,25 @@
 import FreeSimpleGUI as sg
 #WIDGET2 - checkbox para marcar onde foi o problema
-'''cada radio button pertence ao mesmo grupo, dessa forma, cada chamado pode possuir
-apenas uma categoria de item, uma maneira simples e eficaz de permitir uma seleção única'''
+''''''
 
 class Widget2:
     
     @staticmethod
-    def show():
+    def show() -> object:
+        """
+        Responsável por organizar as opções de item disponíveis para serem selecionados
+        a depender de onde foi efetuado o chamado.
+        Caso a demanda tenha sido de computador, selecionar a opções correspondente
+        e assim segue.
+        Por padrão, a opção computador vem selecionada.
+        Como os radios buttons pertencem a um mesmo group_id só é permitida a seleção
+        de um único elemento, contornando erro de seleção dupla de uma maneira simples 
+        e eficaz.
+        A única função retorna o widget2 com as opções organizadas em colunas.
+        
+        :return widget2: object
+        """
+    
         column1 = [
             [sg.Radio('Computador', group_id='item', key='Computador', default=True)],
             [sg.Radio('Rede', group_id='item',key='Rede')],
