@@ -14,14 +14,26 @@ from models.widget5 import Widget5
 
 
 #LAYOUT PRINCIPAL
-'''criação do layout da janela utilizando os widgets, mais fácil de dar manutenção e posicionar
-cada widget é posicionado de maneira individual dentro do layout, dessa forma ele é a junção
-de cada um dos pequenos elementos construídos anteriormente.'''
-
 class Layout:
     
     @staticmethod
-    def show(w1: object,w2: object,w3: object,w4: object,w5: object):
+    def show(w1: object,w2: object,w3: object,w4: object,w5: object) -> object:
+        """
+        Recebe vários layouts e é reponsável por fazer a junção entre eles.
+        Assim retorna um único objeto layout contendo uma série de elementos
+        passados por parâmetro.
+        Dessa forma alterar a posição dos itens, acrescentar mais itens,
+        trocar itens na tela principal, fica mais prática e evita erros de 
+        formatação.
+        
+        :param w1: object
+        :param w2: object
+        :param w3: object
+        :param w4: object
+        :param w5: object
+        
+        :return layout: object
+        """
         layout = [
             [sg.Column(w1),
             sg.VerticalSeparator(pad=0),
