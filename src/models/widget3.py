@@ -1,13 +1,19 @@
 import FreeSimpleGUI as sg
 
 #WIDGET3 - descrição
-'''O campo de descrição é um completo, para melhor entender a causa do chamado, como foi solucionado
-o que fazer para evitar, melhores abordagens futuras com base em históricos passados'''
-
 class Widget3:
 
-    staticmethod
-    def show():
+    @staticmethod
+    def show() -> object:
+        """
+        Possui um único método que é responsável por organizar e retornar o widget3.
+        Criação do campo para descrição de um chamado, é um elemento que é semelhante
+        a um bloco de notas, ou seja, aceita a entrada de várias linhas de texto.
+        O campo de descrição é importante para compreender melhor a causa do problema,
+        bem como, foi resolvido.
+        
+        :return widget3: object
+        """
         widget3 = [
             [sg.Text('Descrição do problema')],
             [sg.Multiline(key='description',size = (None, 5),no_scrollbar = True,do_not_clear=False)]
