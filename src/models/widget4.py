@@ -6,7 +6,13 @@ o botão de cancelar fecha a janela
 o botão de pesquisar abre uma nova janela para realizar uma busca'''
 
 class Widget4:
-    def show():
+    @staticmethod
+    def show() -> object:
+        """
+        Organiza e retorna os botões de ação que estarão na tela principal.
+        
+        :return widget4: object
+        """
         widget4 = [[
             sg.Button('Cadastrar',key='insert', button_color="#2F4F4F"), 
             sg.Button('Pesquisar',key='search'),
