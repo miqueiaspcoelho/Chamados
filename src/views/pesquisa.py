@@ -14,15 +14,23 @@ from models.widget6 import Widget6
 class Pesquisa:
 
     @staticmethod
-    def open_window_pesquisa(title: str, database_name: str, values: list[str], values_key:str, input_key:str, button_name:str, button_name_key:str):
+    def open_window_pesquisa(title: str, database_name: str, values: list[str], values_key:str, input_key:str, button_name:str, button_name_key:str) -> None:
         """
         Renderiza uma janela que dá a opção de pesquisa ao usuário.
         A pesquisa ocorre por meio da seleção de um filtro e em seguida a correta escrita
         do valor desejado, de acordo com o filtro escolhido.
-        Não recebe parâmetros de entrada
+        Os parâmetros recebidos são de configuração para a renderização da janela.
+        Apenas o database_name é utilizado para conexão com o banco de dados.
 
-        :param None
-        :return void
+        :param title: string
+        :param database_name: string
+        :param values: list
+        :param values_key: string
+        :param input_key: string
+        :param button_name: string
+        :param button_name_key: string
+        
+        :return None
         """
         widget6 = Widget6.show(values, values_key, input_key, button_name,button_name_key)
 
