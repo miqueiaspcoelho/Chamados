@@ -18,13 +18,19 @@ class Update:
     def open_window_update(title:str, database_name: str, values: list[str], values_key:str, input_key:str, button_name:str, button_name_key:str) -> None:
         """
         Renderiza uma janela, que permite ao usuário informar o Id de qual chamado deseja atualizar
-        o campo status, campo este que pode receber os seguintes valores:
-        'Resolvido','Pendente','Manutenção', 'Troca', 'RealJet Aberto','RealJet Resolvido'.
+        o campo status, campo este que pode receber uma lista de valores.
         A seleção de tais valores funciona por meio de um menu de opções.
-        Não recebe parâmetros de entrada
+        Os parâmetros recebidos são de configuração para a renderização da janela.
+        Apenas o database_name é utilizado para conexão com o banco de dados.
 
-        :param None
-        :return void
+        :param title: string
+        :param database_name: string
+        :param values: list
+        :param values_key: string
+        :param button_name: string
+        :param button_name_key: string
+        
+        :return None
         """
         
         
