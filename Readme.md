@@ -61,6 +61,18 @@ Para criação de um executável, passo que eu realizei, porém, deixo a cargo d
 Em meu caso utilizei o [***pyinstaller***](https://pyinstaller.org/en/stable/) ferramenta já consolidada e que possui uma vasta documentação, por meio dela gerei um executável do código, mas desejei ir mais além, utilizando o [***inno setup***](https://jrsoftware.org/isinfo.php) montei um instalador para windows que torna a aplicação agora um programa que pode ser instalado no windows, sim, muito legal.
 Deixo como referência o canal do YouTube [Python Simplified](https://www.youtube.com/@PythonSimplified) que possui muitas informações legais e interessantes a respeito de programação utilizando python, foi neste canal do YouTube que encontrei um [vídeo](https://www.youtube.com/watch?v=p3tSLatmGvU) que me ajudou bastante a estudar, assim como, entender melhor as ferramentas citadas anteriormente.
 
+## 📕 Documentação
+
+É possível encontrar a documentação dos modelos, controladores e views usadas no projeto 
+na pasta: <https://github.com/miqueiaspcoelho/Chamados/tree/main/doc>. 
+A documentação foi feita utilizando uma ferramenta nativa do python, ***pydoc***.
+Para criar a documentação com a ferramenta citada, é necessário usar corretamente as
+[***docstrings***](https://peps.python.org/pep-0257/) que é uma maneira de documentar as funções criadas em python.
+```
+caminho_do_arquivo> pydoc -w nome_do_arquivo
+```
+Irá criar um arquivo html dentro da pasta em que o arquivo se encontra, 
+
 ## 🛠️ Construído com
 
 
@@ -78,7 +90,7 @@ Deixo como referência o canal do YouTube [Python Simplified](https://www.youtub
 ## ⏳ Melhorias
 
 * Adição de testes
-* Documentação mais precisa das funções
+* Documentação mais precisa das funções (em processo 95%)
 * Disparar eventos de confirmação ao teclar enter
 * Gerar e exportar relatórios em pdf
 
