@@ -14,11 +14,14 @@ class AddSetor:
     @staticmethod
     def add_setor(database_name: str) -> None:
         """
-        Não recebe nenhum parâmetro de entrada. Renderiza uma janela onde fornece
-        ao usuário um input para adicionar o nome do novo setor a ser adicionado.
+        Recebe o nome do banco de dados ao qual deve se conectar.
+        Renderiza uma janela onde fornece ao usuário um input para adicionar o nome do novo setor 
+        a ser adicionado na tabela de setores do banco.
+        A adição do setor ao banco dados, só ocorre caso o setor
+        em questão ainda não esteja cadastrado.
 
-        :param None
-        :return void
+        :param database_name: string
+        :return None
         """
         layout = [
                 [sg.Text('Setor: ',pad=(10,15)), sg.Input(key='setor_name', size=(None,1),do_not_clear=False)],
